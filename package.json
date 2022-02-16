@@ -31,14 +31,18 @@
     "xml-crypto": "0.8.4",
     "xmldom": "0.1.22 "
   },
-  "main": "samling.js",
+  "main": "server.js",
   "scripts": {
     "prepare": "mkdir -p public/js",
     "bootstrap": "cp -r node_modules/bootstrap/dist/* public/",
     "jquery": "cp -r node_modules/jquery/dist/* public/js/",
     "forge": "cd node_modules/node-forge && npm install && npm run bundle && cp js/forge.bundle.js ../../public",
     "browser": "browserify -g brfs samling.js | sed \"s/require[(]'node-forge'[)]/window.forge/g\" > public/bundle.js",
-    "build": "npm run prepare && npm run bootstrap && npm run jquery && npm run forge && npm run browser"
+    "build": "npm run prepare && npm run bootstrap && npm run jquery && npm run forge && npm run browser",
+    "start": "node server.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
