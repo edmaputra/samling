@@ -45,7 +45,7 @@
   "dependencies": {
     "express": "^4.17.2"
   },
-  "engine": {
-    "node": "12.16.1"
+  "engines": {
+    "node": "14.19.0"
   }
 }
